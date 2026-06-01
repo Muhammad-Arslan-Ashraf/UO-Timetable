@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: #f8f9fc;
+  color: #1a1f2e;
+}
+
+.font-heading { font-family: var(--font-heading); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
+
+.glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #1e40af 70%, #3730a3 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(99,102,241,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(59,130,246,0.2) 0%, transparent 40%);
+}
